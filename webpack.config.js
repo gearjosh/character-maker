@@ -1,3 +1,4 @@
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
@@ -12,12 +13,13 @@ module.exports = {
   },
   {
     plugins: [
+      new UglifyJsPlugin(),
+      new CleanWebpackPlugin(['dist']),
       new HtmlWebpackPlugin({
         title: 'character maker',
         template: './src/index.html'
         favicon: './src/img/favicon.ico'
-      }),
-      new CleanWebpackPlugin(['dist'])
+      })
     ]
   }
   {
