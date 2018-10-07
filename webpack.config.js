@@ -11,9 +11,13 @@ module.exports = {
     // path: path.resolve(__dirname, 'dist')
     path: __dirname + '/dist'
   },
+  devtool: 'eval-source-map',
+  devServer: {
+    contentBase: './dist'
+  },
   {
     plugins: [
-      new UglifyJsPlugin(),
+      new UglifyJsPlugin({ sourceMap: true}),
       new CleanWebpackPlugin(['dist']),
       new HtmlWebpackPlugin({
         title: 'character maker',
