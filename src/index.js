@@ -1,2 +1,2 @@
 import './scss/input.scss';
-// import $ from 'jquery';
+import $ from 'jquery';
