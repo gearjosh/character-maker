@@ -15,37 +15,32 @@ module.exports = {
   devServer: {
     contentBase: './dist'
   },
-  {
-    plugins: [
-      new UglifyJsPlugin({ sourceMap: true}),
-      new CleanWebpackPlugin(['dist']),
-      new HtmlWebpackPlugin({
-        title: 'character maker',
-        template: './src/index.html'
-        favicon: './src/img/favicon.ico'
-      })
+  plugins: [
+    new UglifyJsPlugin({ sourceMap: true}),
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+      title: 'character maker',
+      template: './src/index.html'
+      // favicon: './src/img/favicon.ico'
+    })
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+            "style-loader",
+            "css-loader",
+            "sass-loader"
+        ]
+      }
     ]
   }
-  {
-    module: {
-      rules: [
-        {
-          test: /\.css$/,
-          use: [
-            { loader: "style-loader" },
-            { loader: "css-loader" }
-          ]
-        },
-        {
-          test: /\.scss$/,
-          use: [
-              "style-loader",
-              "css-loader",
-              "sass-loader"
-          ]
-        }
-      ]
-    }
-  }
-
 };
