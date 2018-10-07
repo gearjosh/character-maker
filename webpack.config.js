@@ -1,5 +1,7 @@
-const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   entry: './src/index.js',
@@ -10,7 +12,12 @@ module.exports = {
   },
   {
     plugins: [
-      new HtmlWebpackPlugin();
+      new HtmlWebpackPlugin({
+        title: 'character maker',
+        template: './src/index.html'
+        favicon: './src/img/favicon.ico'
+      }),
+      new CleanWebpackPlugin(['dist'])
     ]
   }
   {
