@@ -1,10 +1,10 @@
 {
   "name": "characters-&-caverns",
   "version": "1.0.0",
-  "description": "make d&d characters",
+  "description": "make d&d characters... maybe more some day",
   "repository": {
     "type": "git",
-    "url": "git://github.com/gearjosh/character-maker.git"
+    "url": "git://github.com/gearjosh/characters-and-caverns.git"
   },
   "main": "index.js",
   "scripts": {
