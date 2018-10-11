@@ -1,3 +1,3 @@
 # characters & caverns
-## a way to make dungeons and dragons characters
+## a way to make dungeons & dragons characters
 ### this does not exist yet.
